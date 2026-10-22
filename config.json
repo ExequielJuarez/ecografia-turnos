@@ -1,0 +1,16 @@
+{
+  "name": "EcoVida Diagnóstico",
+  "whatsapp": "5491155554567",
+  "address": "Av. Cabildo 3300, Belgrano, CABA",
+  "hoursText": "Lun a Vie · 8 a 14 hs",
+  "adminPassword": "cambiar-esta-clave",
+  "schedule": { "dayStart": "07:00", "dayEnd": "15:00", "step": 20, "from": "08:00", "to": "14:00", "openDays": [1, 2, 3, 4, 5] },
+  "services": [
+    { "name": "Ecografía abdominal", "price": 38000, "minutes": 20, "desc": "Ayuno de 8 hs. Tomar 1 litro de agua sin gas." },
+    { "name": "Ecografía obstétrica", "price": 42000, "minutes": 20, "desc": "Control del embarazo, sin preparación especial." },
+    { "name": "Ecografía ginecológica", "price": 40000, "minutes": 20, "desc": "Vejiga llena: tomar agua 1 hora antes." },
+    { "name": "Ecografía de tiroides", "price": 36000, "minutes": 20, "desc": "No requiere preparación." },
+    { "name": "Ecografía mamaria", "price": 40000, "minutes": 20, "desc": "No requiere preparación." },
+    { "name": "Doppler vascular", "price": 55000, "minutes": 40, "desc": "Evaluación de la circulación arterial y venosa." }
+  ]
+}

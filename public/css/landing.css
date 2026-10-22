@@ -1,0 +1,64 @@
+.wrap { width: min(1140px, 100% - 32px); margin: 0 auto; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.02em; margin: 0; line-height: 1.05; }
+a { color: inherit; }
+.mono { font-family: 'IBM Plex Mono', monospace; }
+.nav { position: sticky; top: 0; z-index: 20; background: rgba(11, 31, 58, 0.92); backdrop-filter: blur(10px); color: #fff; padding-top: env(safe-area-inset-top, 0px); }
+.nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; text-decoration: none; letter-spacing: -0.01em; }
+.logo i { width: 26px; height: 26px; border-radius: 50%; border: 2px solid #52c7ff; position: relative; }
+.logo i::after { content: ''; position: absolute; inset: 5px; border-radius: 50%; border: 2px solid #52c7ff; opacity: 0.6; }
+.btn-e { display: inline-flex; align-items: center; padding: 11px 20px; background: var(--accent); color: #fff; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.92rem; transition: transform 140ms var(--ease-out); }
+.btn-e.alt { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.25); }
+.btn-e:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) { .btn-e:hover { filter: brightness(1.12); } }
+
+.hero { background: radial-gradient(120% 100% at 80% 0%, #123f7a 0%, #0b1f3a 55%, #071428 100%); color: #fff; padding: clamp(56px, 9vw, 110px) 0 0; overflow: hidden; position: relative; }
+.hero .wrap { display: grid; gap: 40px; align-items: center; padding-bottom: clamp(40px, 6vw, 70px); }
+@media (min-width: 900px) { .hero .wrap { grid-template-columns: 1.15fr 0.85fr; } }
+.badge-e { display: inline-flex; align-items: center; gap: 8px; font: 500 0.78rem 'IBM Plex Mono', monospace; letter-spacing: 0.08em; text-transform: uppercase; color: #8fdcff; }
+.badge-e::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #52f0b0; box-shadow: 0 0 0 4px rgba(82, 240, 176, 0.2); }
+.hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.8rem); margin: 16px 0 18px; }
+.hero h1 span { color: #52c7ff; }
+.hero p { color: #b9c9e0; max-width: 46ch; font-size: 1.1rem; margin: 0 0 28px; }
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.scope { position: relative; aspect-ratio: 1 / 0.9; width: min(100%, 440px); justify-self: center; border-radius: 50% 50% 8px 8px / 100% 100% 8px 8px; background: radial-gradient(circle at 50% 0, #0f2f5c, #07162c 75%); border: 1px solid rgba(82, 199, 255, 0.35); overflow: hidden; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.scope::before { content: ''; position: absolute; inset: 0; background: repeating-radial-gradient(circle at 50% 0, transparent 0 34px, rgba(82, 199, 255, 0.16) 34px 35px); }
+.scope::after { content: ''; position: absolute; left: 50%; top: 0; width: 2px; height: 140%; transform-origin: top center; background: linear-gradient(#52c7ff, transparent); animation: sweep 5s ease-in-out infinite alternate; }
+@keyframes sweep { from { transform: rotate(-38deg); } to { transform: rotate(38deg); } }
+.wave { display: block; width: 200%; height: 90px; color: #52c7ff; animation: drift 9s linear infinite; }
+.wave-wrap { overflow: hidden; border-top: 1px solid rgba(82, 199, 255, 0.2); }
+@keyframes drift { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .scope::after, .wave { animation: none; } }
+
+.trust { background: #fff; border-bottom: 1px solid var(--line); }
+.trust .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; padding: 22px 0; }
+.trust div { display: flex; flex-direction: column; }
+.trust b { font: 500 1.4rem 'IBM Plex Mono', monospace; color: var(--accent); }
+.trust span { color: var(--muted); font-size: 0.88rem; }
+
+section { padding: clamp(48px, 8vw, 96px) 0; }
+.sec-h { font-size: clamp(2rem, 4.6vw, 3.2rem); margin-bottom: 10px; }
+.sec-p { color: var(--muted); max-width: 54ch; margin: 0 0 32px; }
+#services { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.svc { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: grid; gap: 6px; border-left: 4px solid var(--accent); }
+.svc-top { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.svc h3 { font-size: 1.15rem; letter-spacing: -0.01em; }
+.svc-price { font: 500 1rem 'IBM Plex Mono', monospace; color: var(--accent); white-space: nowrap; }
+.svc p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+.svc-time { font: 500 0.75rem 'IBM Plex Mono', monospace; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.steps { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 36px; counter-reset: st; }
+.steps div { counter-increment: st; padding: 18px; border-radius: 12px; background: #e8f0fb; }
+.steps div::before { content: '0' counter(st); font: 500 0.85rem 'IBM Plex Mono', monospace; color: var(--accent); display: block; margin-bottom: 6px; }
+.steps b { display: block; }
+.steps span { color: var(--muted); font-size: 0.92rem; }
+
+.book { background: #0b1f3a; color: #fff; }
+.book .wrap { display: grid; gap: 36px; }
+@media (min-width: 900px) { .book .wrap { grid-template-columns: 0.8fr 1.2fr; } }
+.book .sec-p { color: #b9c9e0; }
+.book .info { display: grid; gap: 6px; color: #b9c9e0; font-size: 0.95rem; }
+.book-card { background: var(--card); color: var(--fg); border-radius: 16px; padding: clamp(18px, 4vw, 32px); }
+footer { padding: 26px 0 calc(26px + env(safe-area-inset-bottom, 0px)); background: #071428; color: #8da2c0; font-size: 0.85rem; }
+.wa-float { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 30; width: 56px; height: 56px; border-radius: 50%; background: #1faa59; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0, 20, 60, 0.4); transition: transform 140ms var(--ease-out); }
+.wa-float:active { transform: scale(0.94); }
+.wa-float svg { width: 28px; height: 28px; fill: #fff; }
